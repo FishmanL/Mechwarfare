@@ -25,6 +25,9 @@ for x in range(len(files)):
     targetsel = False
     circlesel = 0
     image=files[x]
+    filename, file_extension = os.path.splitext(image)
+    if file_extension!=".jpg":
+        continue
     image=root+"\\"+image
     image=image.replace("\\", "\\\\")
     image = cv2.imread(image)
